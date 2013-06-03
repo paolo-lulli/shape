@@ -1,4 +1,4 @@
-HackBook Framework
+Shape Framework
 ==================
 
 Version 12 December 2010  - by Paolo Lulli
@@ -7,9 +7,9 @@ Version 12 December 2010  - by Paolo Lulli
 Introduction
 ------------
 
-This is only a short introduction to the HackBook Framework. 
+This is only a short introduction to the Shape Framework. 
 
-Hackbook Framework features:
+Shape Framework features:
 
 - Service Oriented Architecture
 - 3-Tier PHP architecture
@@ -29,12 +29,12 @@ You may need installing one of the following bundles:
 
 All these bundle result from some combination of the following packages:
 
-- hbf-client-local    
-- hbf-client-rpc      
-- hbf-server-backend  
-- hbf-server-frontend 
-- hbf-server-gateway  
-- hbf-server-web
+- shape-client-local    
+- shape-client-rpc      
+- shape-server-backend  
+- shape-server-frontend 
+- shape-server-gateway  
+- shape-server-web
 
 which provide the full set of features.
 
