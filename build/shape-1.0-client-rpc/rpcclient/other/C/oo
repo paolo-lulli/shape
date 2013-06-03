@@ -1,0 +1,1 @@
+<?xml version="1.0"?><methodCall><methodName>test.connection</methodName><params><param><value><string>john galt</string></value></param></params></methodCall>

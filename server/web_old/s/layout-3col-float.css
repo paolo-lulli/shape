@@ -1,0 +1,55 @@
+html, body {
+ height: 100%;
+}
+
+#container{
+position: relative; 
+min-height:100%;
+}
+
+#header {
+position:absolute;
+left: 0px;
+right: 0px;
+top:  -8px;
+height: 18px;
+width: 800px;
+}
+
+#menu {
+float: left;
+width: 116px;
+position:relative;
+top: 60px;
+
+}
+#main {
+float: left;
+position:relative;
+left: -204px;
+top:  60px;
+width: 480px;
+
+}
+#navigation {
+float: left;
+position:relative;
+left: 480px;
+top:  60px;
+width: 196px;
+
+}
+
+#footer {
+height: 20px;
+position: relative;
+bottom: 0px;
+width: 800px;
+}
+
+.clearfooter {
+height: 60px;
+clear: both;
+}
+
+

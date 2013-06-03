@@ -1,0 +1,6 @@
+<?php
+include("cleanopts.inc");
+
+
+
+?>

@@ -1,0 +1,12 @@
+<opt>
+  <User>
+    <name>varchar(256)</name>
+    <surname>varchar(256)</surname>
+    <nickname>varchar(256)</nickname>
+    <openid>varchar</openid>
+    <password>varchar(256)</password>
+
+    <created>date</created>
+    <updated>date</updated>
+  </User>
+</opt>

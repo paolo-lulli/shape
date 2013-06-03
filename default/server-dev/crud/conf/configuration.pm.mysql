@@ -1,0 +1,11 @@
+#! /usr/bin/perl
+
+our $dbname="hackbook";
+our $dbusername="hackbook";
+our $dbpassword="";
+our $dbtype="mysql";
+
+our $crud_directory = "\/home\/paolo\/lamp\/base\/apache\/htdocs\/zero";
+
+
+1;

@@ -1,0 +1,301 @@
+/* General settings for the entire page */
+body {
+  margin: 0ex 1ex;
+  padding: 0;
+  background-color: #333;
+  font-family: Verdana, "Lucida Grande", "Lucida Sans Unicode", Arial, sans-serif;
+  font-size: 12pt;
+  color: #000;
+  text-align: center; /* workaround for IE box centering */
+}
+
+/* Header includes logo and project name */
+div.header {
+  margin: auto;
+  min-width: 850px;
+  width: 80%;
+  margin-top: 20px; 
+}
+
+/* The project logo at the top of each page */
+div.logo {
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 1px #000;
+}
+
+/* The page title under main menu */
+div.title {
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: left;
+  color: #333;
+  margin-left: 20px;
+  margin-top: 0;
+  padding-top: 20px;
+  text-shadow: 0 1px #fff;
+}
+
+/* The login status message in the top right-hand corner */
+div.status {
+  float: right;
+  text-align: right;
+  color: #777;
+  font-size: 0.8em;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+/* The main menu bar that appears at the top of the page beneath
+** the header */
+div.mainmenu {
+  padding: 10px 0;
+  font-size: 0.9em;
+  font-weight: bold;
+  text-align: center;
+ /* background: #315FD5; */
+  background: #000000; 
+ 
+  -webkit-border-top-left-radius: 10px;
+  -webkit-border-top-right-radius: 10px;
+  -moz-border-radius-topleft: 10px;
+  -moz-border-radius-topright: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+/*
+  border-top: 1px solid #69F;
+  border-bottom: 1px solid #152952;
+*/
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+
+
+  text-shadow: 0 -1px #152952;
+  margin-bottom: 0;
+}
+
+/* The submenu bar that *sometimes* appears below the main menu */
+div.submenu {
+  padding: 3px 10px 3px 0px;
+  font-size: 0.75em;
+  text-align: center;
+  color: #333;
+  margin-top: -23px; /* push it to top between page title and status  */
+  margin-bottom: 2px;
+}
+
+div.mainmenu a:link, div.mainmenu a:visited {
+  padding: 3px 10px 3px 10px;
+  color: #fff;
+  text-decoration: none;
+  border: 0;
+}
+
+div.submenu a:link, div.submenu a:visited {
+  padding: 1px 10px;
+  color: #222;
+  border: 1px solid #BDBDBD;
+  background: #EEE;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  text-shadow: 0 1px #fff;
+}
+
+div.submenu a:hover {
+  color: #fff;
+  background: #858585;
+  border-color: #5B5B5B;
+  text-shadow: 0 1px #000;
+}
+
+div.mainmenu a:hover, div.mainmenu a:visited:hover {
+/*   color: #9CF;
+*/
+  color: #FF0000;
+
+
+  text-decoration: none;
+}
+
+div.container {
+  margin: auto;
+  min-width: 850px;
+  width: 80%;  
+  background: #69F;
+  margin-top: 20px;
+}
+
+div.container, div.subcontainer {
+  background: #f4f4f4;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  margin-bottom: 0;
+  text-align: left;
+}
+
+div.subcontainer {
+  width: 100%;
+  -webkit-border-top-left-radius: 0;
+  -webkit-border-top-right-radius: 0;
+  -moz-border-radius-topleft: 0;
+  -moz-border-radius-topright: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+/* All page content from the bottom of the menu or submenu down to
+** the footer */
+div.content {
+  padding: 10px 20px 20px 20px;
+  font-size: 0.8em;
+  width: 100%;
+  background-color: "light-gray";
+}
+
+/* Some pages have section dividers */
+div.section {
+  margin-bottom: 0px;
+  margin-top: 1em;
+  padding: 1px 1px 1px 1px;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #5B677E;
+  border-bottom: 2px solid #B6BECD;
+}
+
+/* The "Date" that occurs on the left hand side of timelines */
+div.divider {
+  border-bottom: 2px solid #B6BECD;
+  font-size: 1em; font-weight: normal;
+  padding-bottom: .25em;
+  margin: .5em 0 .5em 0;
+  float: left;
+  clear: left;
+  color: #5B677E;
+}
+
+/* The footer at the very bottom of the page */
+div.footer {
+  margin: auto;
+  min-width: 850px;
+  width: 80%;
+  font-size: 0.8em;
+  padding: 5px 10px 5px 10px;
+  text-align: right;
+  color: #777;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* Make the links in the footer less ugly... */
+div.footer a { color: white; }
+div.footer a:link { color: white; }
+div.footer a:visited { color: white; }
+div.footer a:hover { background-color: white; color: #558195; }
+
+/* <verbatim> blocks */
+pre.verbatim {
+  background-color: #f3f3f3;
+  padding: 0.5em;
+}
+
+/* The label/value pairs on (for example) the ci page */
+table.label-value th {
+  vertical-align: top;
+  text-align: right;
+  padding: 0.2ex 2ex;
+}
+
+/* For marking important UI elements which shouldn't be
+   lightly dismissed. I mainly use it to mark "not yet
+   implemented" parts of a page. Whether or not to have
+   a 'border' attribute set is arguable. */
+.achtung {
+  color: #ff0000;
+  background: #ffff00;
+  border: 1px solid #ff0000;
+}
+
+div.miniform {
+  font-size: smaller;
+  margin: 8px;
+}
+
+hr { 
+  height: 0;
+  color: #ccc;
+  background-color: #ccc;
+  border: 0;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #fff;
+}
+
+table {
+  font-size: 1em;
+}
+
+a:link {
+   color: #004080;
+   text-decoration: none;
+}
+
+a:visited {
+   color: #6A4A95;
+   text-decoration: none;
+}
+
+a:hover {
+  color: #24548F;
+  text-decoration: underline;
+}
+
+a:visited:hover {
+   color: #6A4A95;
+   text-decoration: underline;
+}
+
+table.report {
+  margin-bottom: 1em;
+  border: 1px solid #bbb;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+table.report td, table.report th {
+  border: 1px solid #bbb;
+  border-width: 1px;
+  border-spacing: 0;
+  padding: 4px;
+}
+
+/* Ticket view */
+
+td.tkt-label {
+  text-align: right;
+  color: #666;
+}
+
+td.tkt-label-comments {
+  color: #666;
+}
+
+td.tkt-value, td.tkt-value-comments {
+  background-color: #fcfcfc;
+  border: 1px solid #ddd;
+  -webkit-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  border-radius: 3px;
+}
+
+td.tkt-value-comments {
+  padding: 15px;
+}

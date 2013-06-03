@@ -1,0 +1,8 @@
+<opt>
+  <Usergroup>
+    <name>varchar(256)</name>
+    <description>varchar(256)</description>
+    <created>date</created>
+    <updated>date</updated>
+  </Usergroup>
+</opt>

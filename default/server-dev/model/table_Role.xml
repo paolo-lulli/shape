@@ -1,0 +1,9 @@
+<opt>
+  <Role>
+    <description>varchar(256)</description>
+    <name>varchar(256)</name>
+
+    <created>date</created>
+    <updated>date</updated>
+  </Role>
+</opt>

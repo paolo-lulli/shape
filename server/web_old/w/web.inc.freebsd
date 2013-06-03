@@ -1,0 +1,16 @@
+<?
+
+$system = php_uname("s");
+
+define ("USE_AJAX","true");
+
+define ("ROOT_BACKEND",  "/home/paolo/apps/hbf");
+define ("WWWDIR",  "/var/www/hbf");
+define ("WEBSITE",  "default");
+define ("WEBROOT",  "http://127.0.0.1/dev/hbf");
+define ("CSSROOT" , WEBROOT."/css");
+define ("LOGROOT" , ROOT_BACKEND."/logs");
+
+
+
+?>
