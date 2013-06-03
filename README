@@ -1,6 +1,0 @@
-This is an empty template to build a distributed,
-three-tiered PHP application with: 
-
-- local or remote server 
-- local client or remote xml-rpc client to access to core 
-functionalities.
