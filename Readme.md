@@ -41,7 +41,7 @@ which provide the full set of features.
 
 Role-Based (RBAC) Authentication
 ---------------------------------
-![RBAC model](madunixman.github.com/shape/img/rbac.png)
+![RBAC model](https://raw.github.com/madunixman/shape/master/img/rbac.png)
 
 Install
 -------
