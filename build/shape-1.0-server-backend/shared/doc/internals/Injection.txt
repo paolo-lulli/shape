@@ -1,0 +1,12 @@
+To prevent SQL injection
+http://ezinearticles.com/?SQL-Injection-Protection-in-PHP-With-PDO&id=1815110
+
+they suggest to: 
+
+$sql = "INSERT INTO fruits (name, price) VALUES (?, ?)";
+
+and then execute the query with a data set passed to the abstraction layer as follows:
+
+$sth = $dbh->prepare($sql);
+$sth->execute(array($fruit, $price));
+

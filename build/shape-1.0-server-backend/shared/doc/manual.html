@@ -1,0 +1,133 @@
+<h1>HackBook Framework</h1>
+
+<p>Version 12 December 2010  - by Paolo Lulli
+<a href="http://paolo.lulli.net/">http://paolo.lulli.net/</a></p>
+
+<h2>Introduction</h2>
+
+<p>This is only a short introduction to the HackBook Framework. </p>
+
+<p>Hackbook Framework features:</p>
+
+<ul>
+<li>Service Oriented Architecture</li>
+<li>3-Tier PHP architecture</li>
+<li>MVC engine</li>
+<li>Flexible RBAC Authentication </li>
+<li>Portable Database Query Engine</li>
+</ul>
+
+<h2>Packages and Bundle(s)</h2>
+
+<p>You may need installing one of the following bundles:</p>
+
+<ul>
+<li>A complete remote SERVER solution             [server_xmlrpc]</li>
+<li>A CLIENT for a local server               [client_local]</li>
+<li>A RPC CLIENT for a remote server          [client_xmlrpc]</li>
+<li>A full local install of both SERVER and CLIENT    [full]</li>
+</ul>
+
+<p>All these bundle result from some combination of the following packages:</p>
+
+<ul>
+<li>hbf-client-local    </li>
+<li>hbf-client-rpc      </li>
+<li>hbf-server-backend  </li>
+<li>hbf-server-frontend </li>
+<li>hbf-server-gateway  </li>
+<li>hbf-server-web</li>
+</ul>
+
+<p>which provide the full set of features.</p>
+
+<h2>Role-Based (RBAC) Authentication</h2>
+
+<p><img src="rbac.png" alt="RBAC model" title="" /></p>
+
+<h2>Install</h2>
+
+<h3>Remote server</h3>
+
+<p>On the local machine</p>
+
+<pre><code>cd $APPLICATION_HOME/install
+
+./install-remote.sh
+</code></pre>
+
+<p>then, ssh on the remote machine you're going to install, and cd to the directory</p>
+
+<pre><code>cd $REMOTE_BACKEND_INSTALL_DIR/server/admin
+</code></pre>
+
+<p>launch the following script:</p>
+
+<pre><code>./init.sh
+</code></pre>
+
+<p>it initializes the database and the log directory.</p>
+
+<h3>Client</h3>
+
+<pre><code>cd $APPLICATION_HOME/install
+
+./install-local-client.sh
+</code></pre>
+
+<h3>Local Server</h3>
+
+<pre><code>cd $APPLICATION_HOME/install
+
+install-local-server.sh
+</code></pre>
+
+<h2>Programming Interface</h2>
+
+<h3>Configuration Manager</h3>
+
+<p>All top-level configurations are available from the ConfManager class; it exposes the following methods:</p>
+
+<pre><code>//User Data Acquisition
+public abstract function registerUser( $name, $surname, $nickname, $password, $openid );
+
+//Account Management
+public abstract function createAccount($userid, $group_name, $role_name);
+public abstract function activateAccount($account_id);
+public abstract function deactivateAccount($account_id);
+
+//Roles Creation
+public abstract function createRole($name, $description);
+public abstract function deleteRole($roleName);
+
+//Resources Installation
+public abstract function installResource($resName);
+public abstract function deleteResource($resName);
+public abstract function addResourceToRole($resName, $roleName);
+public abstract function removeResourceFromRole($resName, $roleName);
+</code></pre>
+
+<p>For example, to call the</p>
+
+<pre><code>registerUser(...)
+</code></pre>
+
+<p>method we can code the following:</p>
+
+<pre><code>require_once('../conf/backend.inc');
+require_once(BACKEND_DIR.'/kernel'.'/ConfManager.class.inc');
+$cm = new ConfManager;
+$userid = $cm-&gt;registerUser( "name", "mysurname", "mynick", "mypassword", "myemail@email.com");
+</code></pre>
+
+<p>N.B.: </p>
+
+<pre><code>backend.inc
+</code></pre>
+
+<p>is the backend configuration file; above all, it sets the value for the </p>
+
+<pre><code>BACKEND_DIR
+</code></pre>
+
+<p>constant</p>

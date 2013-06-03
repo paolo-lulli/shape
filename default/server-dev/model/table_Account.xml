@@ -1,0 +1,12 @@
+<opt>
+  <Account>
+    <ID_User>varchar(36)</ID_User>
+    <ID_Usergroup>varchar(36)</ID_Usergroup>
+    <ID_Role>varchar(36)</ID_Role>
+
+    <created>date</created>
+    <updated>date</updated>
+
+    <active>int</active>
+  </Account>
+</opt>

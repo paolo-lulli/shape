@@ -1,0 +1,14 @@
+<opt>
+  <Resource>
+    <name>varchar(256)</name>
+    <description>varchar(256)</description>
+    <externaltable>varchar(256)</externaltable>
+    <type>varchar(256)</type>
+    <data>blob</data>
+
+    <created>date</created>
+    <updated>date</updated>
+
+    <internal>int</internal>
+  </Resource>
+</opt>

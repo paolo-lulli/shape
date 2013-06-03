@@ -1,0 +1,15 @@
+<opt>
+  <Email>
+    <to>varchar(256)</to>
+    <from>varchar(256)</from>
+    <txtmessage>text</txtmessage>
+    <htmlmessage>text</htmlmessage>
+
+    <cc>varchar(256)</cc>
+    <bcc>varchar(256)</bcc>
+    <replyto>varchar(256)</replyto>
+
+    <created>date</created>
+    <updated>date</updated>
+  </Email>
+</opt>

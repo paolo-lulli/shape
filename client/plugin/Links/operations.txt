@@ -1,0 +1,7 @@
+$qm->create($table,$fields,$types);
+$qm->select($table,$fields,$values,NULL, NULL);
+$qm->select($table,$fields,$values,$selected, $aliases);
+$qm->update($table,$fields,$values,$where_fields, $where_values);
+$qm->delete($table,$fields,$values,$where_fields, $where_values);
+$qm->insert($table,$fields,$values);
+

@@ -1,0 +1,128 @@
+#header {
+	position:absolute;
+	height: 12px; 
+/*	height: 3%; */
+	width: 90%; 
+	top: 0em; 
+	left: 0em; 
+	right: 0em; 
+	
+	/*bottom: 3em;*/
+	background-color: black;
+	color: white;
+	margin-top: 0em;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	padding-left: 4em;
+	font-family: sans-serif; 
+	font-weight: bolder;
+	font-size: 10;
+	}
+
+#all {
+	text-align:center;
+}
+
+
+
+#footer {
+   position:absolute;
+   bottom:-94%;
+   width: 90%;
+   height: 30px;   /* Height of the footer */
+   background-color: black;
+   color: white;
+   padding-left: 4em;
+   font-family: sans-serif; 
+   font-weight: bolder;
+   font-size: 10;
+}
+
+
+#left_column{
+
+	position:absolute;
+	bottom: 0em;
+	top: 4em;
+	left: 1%; 
+	width: 12%; 
+	/*height: 90%; */
+	background-color: white;
+	padding-top: 1em;
+	padding-bottom: 1em;
+
+	border-bottom : 1px dashed #979ca9;
+	border-right : 1px dashed #979ca9;
+	border-left : 1px dashed #979ca9;
+	border-top : 1px dashed #979ca9; 
+
+	font-weight: normal;
+}
+
+#right_column{
+	
+	position:absolute;
+	top: 4em;
+	bottom: 0em;
+	right: -6%; 
+	left: 80%; 
+	width: 12%; 
+	border-style: dashed;
+	font-weight: normal;
+	padding-top: 1em;
+	padding-bottom: 1em;
+
+	border-bottom : 1px dashed #979ca9;
+	border-right : 1px dashed #979ca9;
+	border-left : 1px dashed #979ca9;
+	border-top : 1px dashed #979ca9; 
+	/*background-color: black;*/
+}
+
+A{
+	color: white;
+	text-decoration: none;
+	font-weight: bold;
+}
+A:Hover{
+	/*text-decoration: underline; */
+	/*color: gray; */
+	font-size: 14;
+	/* background-color: white; */
+}
+
+body {
+	background: white; 
+	background-image: url("ihttp://www.smashingmagazine.com/images/freebies-part2/paper-hires.jpg");
+}
+
+#corpus {
+	position:absolute;
+	top: 4em;
+	left: 15%; 
+	right: 15%; 
+	width: 54%; /* WAS 64% */
+	padding-top: 1em;
+	padding-bottom: 1em;
+	padding-left: 1em;
+	padding-right: 1em;
+	/*background-image: url("http://www.smashingmagazine.com/images/freebies-part2/paper-hires.jpg"); */
+	background: lightgray;
+
+	border-bottom : 1px dashed #979ca9;
+	border-right : 1px dashed #979ca9;
+	border-left : 1px dashed #979ca9;
+	border-top : 1px dashed #979ca9; 
+}
+
+#horizontal_separator{
+
+	position:relative;
+	margin-top: 0em;
+	background-color: wheat; 
+}
+
+.logo {
+	color: red;
+	font-size: 14;
+}

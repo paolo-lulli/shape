@@ -1,0 +1,10 @@
+Groups:         Admin      Users       Developers    Uploaders	
+Roles:
+------------------------------------------------------
+  |
+  |
+               system      generic        all        uploader
+
+--------------------
+
+admin

@@ -1,0 +1,13 @@
+<opt>
+  <Policy>
+    <ID_Resource>varchar(36)</ID_Resource>
+    <ID_Role>varchar(36)</ID_Role>
+    <description>varchar(256)</description>
+
+    <perms>varchar(12)</perms>
+
+    <created>date</created>
+    <updated>date</updated>
+
+  </Policy>
+</opt>

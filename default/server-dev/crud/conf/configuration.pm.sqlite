@@ -1,0 +1,11 @@
+#! /usr/bin/perl
+
+our $dbname="provaaa.db";
+our $dbusername="";
+our $dbpassword="";
+our $dbtype="SQLite";
+
+
+our $crud_directory = "\/home\/paolo\/lamp\/base\/apache\/htdocs\/zero";
+
+1;

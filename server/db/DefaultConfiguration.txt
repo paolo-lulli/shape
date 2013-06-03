@@ -1,0 +1,17 @@
+ROLES
+	role-web-admin
+	role-commandline
+	role-generic
+
+USERGROUPS
+               role-web-admin
+	wheel /_ role-commandline
+	      \
+               role-generic 
+
+	users - role-generic
+
+USERS
+	root - group-wheel
+	test - group-users
+

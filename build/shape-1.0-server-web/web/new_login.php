@@ -1,0 +1,3 @@
+<?
+		include("./new/login.php");
+?>

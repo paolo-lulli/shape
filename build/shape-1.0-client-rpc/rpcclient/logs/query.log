@@ -1,0 +1,12 @@
+<query sessionID="" timestamp="2010-04-13 22:28:57">
+CREATE TABLE A_table ( 'A'  't' );
+</query>
+<query sessionID="" timestamp="2010-04-13 22:29:08">
+CREATE TABLE A_table ( 'A'  't' );
+</query>
+<query sessionID="" timestamp="2010-04-13 22:29:51">
+CREATE TABLE A_table ( 'A'  't' );
+</query>
+<query sessionID="" timestamp="2010-04-13 22:30:46">
+CREATE TABLE B_table ( 'A'  't' );
+</query>

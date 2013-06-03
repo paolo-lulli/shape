@@ -1,0 +1,154 @@
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
+  margin:0;
+  padding:0;
+}
+/*
+body {
+  background:#FFFFFF none repeat scroll 0 0;
+  font-family:Cambria,Georgia,Palatino,Palatino Linotype,Myriad Pro,Serif;
+  color:#333333;
+}
+a {
+  color:#2200CC;
+}
+a:active {
+  color:red;
+}
+#container {
+  background:#FFFFFF none repeat scroll 0 0;
+   margin:0 auto; 
+  width:970px;
+  position:relative; 
+}
+*/
+#hd {
+  border-top:10px solid #AA0000;
+}
+#bd {
+  margin-top:10px;
+}
+#bd .profileimg {
+  float:left;
+  width:370px;
+}
+#bd .profileimg img {
+  padding:4px;
+}
+#bd .more {
+  float:left;
+  /* margin-left:15px; */
+  width:585px;
+}
+#bd .more h2 {
+  font-size:32px;
+}
+#bd .more .intro {
+  margin-top:15px;
+  line-height:1.22em;
+}
+#bd .more .intro span {
+  margin-left:480px;
+}
+#bd .more ul {
+  list-style-image:none;
+  list-style-position:none;
+  list-style-type:none;
+}
+#bd .more ul {
+  margin-top:15px;
+  border-bottom:1px solid #C6DFF9;
+  padding:0px 0px 2px 0px;
+  _height:20px;
+}
+#bd .more li {
+  display:inline;
+  float:left;
+  padding:5px 15px 2px;
+  position:relative;
+  top:3px;
+  white-space:nowrap;
+}
+#bd .more li a {
+  background:#000000 none repeat scroll 0 0%;
+  color:#444444;
+  font-weight:normal;
+}
+#bd .more .selected {
+  background:#000000 none repeat scroll 0 0%;
+  border-color:#C6DFF9 #C6DFF9 -moz-use-text-color;
+  border-style:solid solid none;
+  border-width:1px 1px 0;
+  font-weight:bold;
+}
+#bd .more .selected a {
+  background:#000000 none repeat scroll 0 0%;
+  color:#AA0000;
+  font-weight:bold;
+  text-decoration:none;
+}
+#bd .more .boldlink a {
+  font-weight:bold;
+  color:#2200CC;
+}
+#bd .more .boldlink a:active {
+  color:red;
+}
+#bd .more .tab_container {
+  font-family:Verdana,Arial,'Helvetica',sans-serif;
+  border-left:1px solid #C6DFF9;
+  border-right:1px solid #C6DFF9;
+  border-bottom:1px solid #C6DFF9;
+  font-size:13px;
+  height:288px;
+  display:none;
+  padding:10px;
+  overflow-y:auto;
+}
+#bd .more .tab_container img {
+  border:0px;
+}
+#bd .more .tab_container a {
+  text-decoration:none;
+}
+#bd .more .tab_container a:hover {
+  text-decoration:underline;
+}
+#bd .more .tab_container center {
+  font-size:24px;
+  margin-top:10px;
+  font-weight:bold;
+  font-family:Cambria,Georgia,Palatino,Palatino Linotype,Myriad Pro,Serif;
+}
+#bd .more .tab_container .cms-logo, #bd .more .tab_container .yahoo-logo, #bd .more .tab_container .epfl-logo,
+#bd .more .tab_container .aaveg-logo {
+  float:right;
+  padding-left:10px;
+  padding-bottom:10px;
+}
+#bd .more .tab_container .iitg-logo, #bd .more .tab_container .oracle-logo,
+#bd .more .tab_container .ichor-logo {
+  float:left;
+  padding-right:10px;
+  padding-bottom:10px;
+}
+#bd .more .tab_container .projects {
+  margin-bottom:5px;
+}
+#bd .more .tab_container .projects .abstract {
+  padding-bottom:3px;
+  padding-left:15px;
+  padding-top:3px;
+}
+#ft {
+  margin-top:10px;
+  border-top:1px solid #C6DFF9;
+  border-bottom:1px solid #C6DFF9;
+  padding:5px;
+}
+#ft img {
+  float:left;
+  height:16px;
+  padding-right:6px;
+  width:16px;
+  border:none;
+}

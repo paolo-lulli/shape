@@ -1,0 +1,15 @@
+<?
+
+$system = php_uname("s");
+
+define ("USE_AJAX","true");
+
+define ("ROOT_BACKEND",  "c:\\tmp\\apps/hbf");
+define ("WWWDIR",  "c:\survival\\opt\\xampp\\htdocs\\dev\\hbf");
+define ("WEBROOT",  "http://127.0.0.1/dev/hbf");
+define ("CSSROOT" , WEBROOT."/css");       // web path
+define ("LOGROOT" , ROOT_BACKEND."\\logs"); // local path
+
+
+
+?>

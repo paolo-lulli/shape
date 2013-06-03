@@ -1,0 +1,184 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+  <channel>
+    <title>Code</title>
+    <link>http://dev.lulli.net/code/repo/index.cgi</link>
+    <description>a QQQQ</description>
+    <pubDate>Fri, 5 Feb 2010 00:43:07 GMT</pubDate>
+    <generator>Fossil version [eaef1a77cc] 2010-01-14 16:17:48</generator>
+    <item>
+      <title>(no comment)</title>
+      <link>http://dev.lulli.net/code/repo/index.cgi/ci/90175c88eb7052bc64789ba5d5175dc97a61923b</link>
+      <description>(no comment)</description>
+      <pubDate>Thu, 4 Feb 2010 16:58:39 GMT</pubDate>
+      <author>paolo</author>
+      <guid>http://dev.lulli.net/code/repo/index.cgi/ci/90175c88eb7052bc64789ba5d5175dc97a61923b</guid>
+    </item>
+    <item>
+      <title>(no comment)</title>
+      <link>http://dev.lulli.net/code/repo/index.cgi/ci/c59d0ab449c05a5870a2d4d36fb97e6026a46fe5</link>
+      <description>(no comment)</description>
+      <pubDate>Thu, 4 Feb 2010 16:25:02 GMT</pubDate>
+      <author>paolo</author>
+      <guid>http://dev.lulli.net/code/repo/index.cgi/ci/c59d0ab449c05a5870a2d4d36fb97e6026a46fe5</guid>
+    </item>
+    <item>
+      <title>(no comment)</title>
+      <link>http://dev.lulli.net/code/repo/index.cgi/ci/bbf7556f34df3ce913e0886ac5ac1f42636108c9</link>
+      <description>(no comment)</description>
+      <pubDate>Thu, 4 Feb 2010 16:18:09 GMT</pubDate>
+      <author>paolo</author>
+      <guid>http://dev.lulli.net/code/repo/index.cgi/ci/bbf7556f34df3ce913e0886ac5ac1f42636108c9</guid>
+    </item>
+    <item>
+      <title>Added date() to logs</title>
+      <link>http://dev.lulli.net/code/repo/index.cgi/ci/ab3f0e13963803c329400bcdea1fcdbb3d32c13b</link>
+      <description>Added date() to logs</description>
+      <pubDate>Thu, 4 Feb 2010 14:47:11 GMT</pubDate>
+      <author>paolo</author>
+      <guid>http://dev.lulli.net/code/repo/index.cgi/ci/ab3f0e13963803c329400bcdea1fcdbb3d32c13b</guid>
+    </item>
+    <item>
+      <title>(no comment)</title>
+      <link>http://dev.lulli.net/code/repo/index.cgi/ci/411da3faea5790e04b2b34d4bc832c03cbfbeee8</link>
+      <description>(no comment)</description>
+      <pubDate>Thu, 4 Feb 2010 13:43:38 GMT</pubDate>
+      <author>paolo</author>
+      <guid>http://dev.lulli.net/code/repo/index.cgi/ci/411da3faea5790e04b2b34d4bc832c03cbfbeee8</guid>
+    </item>
+    <item>
+      <title>(no comment)</title>
+      <link>http://dev.lulli.net/code/repo/index.cgi/ci/f89173527e5494d7c6fa4092b2570ce66ca5c5f6</link>
+      <description>(no comment)</description>
+      <pubDate>Thu, 4 Feb 2010 11:52:19 GMT</pubDate>
+      <author>paolo</author>
+      <guid>http://dev.lulli.net/code/repo/index.cgi/ci/f89173527e5494d7c6fa4092b2570ce66ca5c5f6</guid>
+    </item>
+    <item>
+      <title>(no comment)</title>
+      <link>http://dev.lulli.net/code/repo/index.cgi/ci/e54df16dacd1f0e692928845368d11d926e6afd6</link>
+      <description>(no comment)</description>
+      <pubDate>Thu, 4 Feb 2010 11:51:57 GMT</pubDate>
+      <author>paolo</author>
+      <guid>http://dev.lulli.net/code/repo/index.cgi/ci/e54df16dacd1f0e692928845368d11d926e6afd6</guid>
+    </item>
+    <item>
+      <title>Working login.inc</title>
+      <link>http://dev.lulli.net/code/repo/index.cgi/ci/6d9da44a834c897e82fc18e6c78cedce1da4e34c</link>
+      <description>Working login.inc</description>
+      <pubDate>Thu, 4 Feb 2010 10:04:22 GMT</pubDate>
+      <author>paolo</author>
+      <guid>http://dev.lulli.net/code/repo/index.cgi/ci/6d9da44a834c897e82fc18e6c78cedce1da4e34c</guid>
+    </item>
+    <item>
+      <title>(no comment)</title>
+      <link>http://dev.lulli.net/code/repo/index.cgi/ci/24bee7d1ed90f6f7283ae15c45b0b33948bee281</link>
+      <description>(no comment)</description>
+      <pubDate>Thu, 4 Feb 2010 00:36:45 GMT</pubDate>
+      <author>paolo</author>
+      <guid>http://dev.lulli.net/code/repo/index.cgi/ci/24bee7d1ed90f6f7283ae15c45b0b33948bee281</guid>
+    </item>
+    <item>
+      <title>(no comment)</title>
+      <link>http://dev.lulli.net/code/repo/index.cgi/ci/fa04ed389881a6c08d8c7b5e185efc521e8b3687</link>
+      <description>(no comment)</description>
+      <pubDate>Wed, 3 Feb 2010 16:05:01 GMT</pubDate>
+      <author>paolo</author>
+      <guid>http://dev.lulli.net/code/repo/index.cgi/ci/fa04ed389881a6c08d8c7b5e185efc521e8b3687</guid>
+    </item>
+    <item>
+      <title>(no comment)</title>
+      <link>http://dev.lulli.net/code/repo/index.cgi/ci/84701c782cb448aad95809aee5da765844ae4673</link>
+      <description>(no comment)</description>
+      <pubDate>Wed, 3 Feb 2010 01:12:41 GMT</pubDate>
+      <author>paolo</author>
+      <guid>http://dev.lulli.net/code/repo/index.cgi/ci/84701c782cb448aad95809aee5da765844ae4673</guid>
+    </item>
+    <item>
+      <title>(no comment)</title>
+      <link>http://dev.lulli.net/code/repo/index.cgi/ci/e8935fdf10ed908a64482cb39cd8fc1832b7cbb8</link>
+      <description>(no comment)</description>
+      <pubDate>Wed, 3 Feb 2010 00:44:45 GMT</pubDate>
+      <author>paolo</author>
+      <guid>http://dev.lulli.net/code/repo/index.cgi/ci/e8935fdf10ed908a64482cb39cd8fc1832b7cbb8</guid>
+    </item>
+    <item>
+      <title>WORKING methods in AuthManager.class.inc:
+
+- boolean auth_resource(ID_User, ID_Role, ID_Resource)
+- ID_User login(username, password)</title>
+      <link>http://dev.lulli.net/code/repo/index.cgi/ci/eaaa70ab356d4cf68e2f54b21587a7d54683f8df</link>
+      <description>WORKING methods in AuthManager.class.inc:
+
+- boolean auth_resource(ID_User, ID_Role, ID_Resource)
+- ID_User login(username, password)</description>
+      <pubDate>Tue, 2 Feb 2010 23:12:29 GMT</pubDate>
+      <author>paolo</author>
+      <guid>http://dev.lulli.net/code/repo/index.cgi/ci/eaaa70ab356d4cf68e2f54b21587a7d54683f8df</guid>
+    </item>
+    <item>
+      <title>(no comment)</title>
+      <link>http://dev.lulli.net/code/repo/index.cgi/ci/7b03516bb1e01aca25678aeff38f2b68e7073870</link>
+      <description>(no comment)</description>
+      <pubDate>Tue, 2 Feb 2010 22:44:19 GMT</pubDate>
+      <author>paolo</author>
+      <guid>http://dev.lulli.net/code/repo/index.cgi/ci/7b03516bb1e01aca25678aeff38f2b68e7073870</guid>
+    </item>
+    <item>
+      <title>(no comment)</title>
+      <link>http://dev.lulli.net/code/repo/index.cgi/ci/b82efaf2f9d1481bb0e319d0ae73e548f4d942dd</link>
+      <description>(no comment)</description>
+      <pubDate>Mon, 1 Feb 2010 23:36:46 GMT</pubDate>
+      <author>paolo</author>
+      <guid>http://dev.lulli.net/code/repo/index.cgi/ci/b82efaf2f9d1481bb0e319d0ae73e548f4d942dd</guid>
+    </item>
+    <item>
+      <title>(no comment)</title>
+      <link>http://dev.lulli.net/code/repo/index.cgi/ci/a663d42248720d6fc293bae370b4f068e15520a5</link>
+      <description>(no comment)</description>
+      <pubDate>Mon, 1 Feb 2010 15:00:27 GMT</pubDate>
+      <author>paolo</author>
+      <guid>http://dev.lulli.net/code/repo/index.cgi/ci/a663d42248720d6fc293bae370b4f068e15520a5</guid>
+    </item>
+    <item>
+      <title>(no comment)</title>
+      <link>http://dev.lulli.net/code/repo/index.cgi/ci/df6215e7e6aee7a1be736be280a5daad78f08dba</link>
+      <description>(no comment)</description>
+      <pubDate>Mon, 1 Feb 2010 14:47:05 GMT</pubDate>
+      <author>paolo</author>
+      <guid>http://dev.lulli.net/code/repo/index.cgi/ci/df6215e7e6aee7a1be736be280a5daad78f08dba</guid>
+    </item>
+    <item>
+      <title>(no comment)</title>
+      <link>http://dev.lulli.net/code/repo/index.cgi/ci/f5b2176a36a64e59df9648d4041da2f5dc17d823</link>
+      <description>(no comment)</description>
+      <pubDate>Mon, 1 Feb 2010 14:21:13 GMT</pubDate>
+      <author>paolo</author>
+      <guid>http://dev.lulli.net/code/repo/index.cgi/ci/f5b2176a36a64e59df9648d4041da2f5dc17d823</guid>
+    </item>
+    <item>
+      <title>(no comment)</title>
+      <link>http://dev.lulli.net/code/repo/index.cgi/ci/511f7d78bd1c8fc737b2bf6f6800023d4dcadcae</link>
+      <description>(no comment)</description>
+      <pubDate>Mon, 1 Feb 2010 14:12:55 GMT</pubDate>
+      <author>paolo</author>
+      <guid>http://dev.lulli.net/code/repo/index.cgi/ci/511f7d78bd1c8fc737b2bf6f6800023d4dcadcae</guid>
+    </item>
+    <item>
+      <title>auth_resource(...) WORKS</title>
+      <link>http://dev.lulli.net/code/repo/index.cgi/ci/e90d1c78f17b17cbd93758210fa8045fe28cbb50</link>
+      <description>auth_resource(...) WORKS</description>
+      <pubDate>Sun, 31 Jan 2010 23:16:49 GMT</pubDate>
+      <author>paolo</author>
+      <guid>http://dev.lulli.net/code/repo/index.cgi/ci/e90d1c78f17b17cbd93758210fa8045fe28cbb50</guid>
+    </item>
+    <item>
+      <title>(no comment)</title>
+      <link>http://dev.lulli.net/code/repo/index.cgi/ci/8716ff71880fda4d5c5e7ea84ddd559b6787af58</link>
+      <description>(no comment)</description>
+      <pubDate>Sat, 30 Jan 2010 01:40:23 GMT</pubDate>
+      <author>paolo</author>
+      <guid>http://dev.lulli.net/code/repo/index.cgi/ci/8716ff71880fda4d5c5e7ea84ddd559b6787af58</guid>
+    </item>
+  </channel>
+</rss>
