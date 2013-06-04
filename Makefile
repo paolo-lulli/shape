@@ -1,9 +1,3 @@
-#PROJECT="dbthunder"
-#VERSION="0.1"
-
-#BASE=${CURDIR}
-#BASE=/Users/paolo/code/dbthunder
-
 include ./build.cfg
 
 ###########################################################################
