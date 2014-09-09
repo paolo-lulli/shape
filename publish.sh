@@ -1,6 +1,6 @@
 #! /bin/sh
 
-LOCAL_DIR=ReactReader
+#LOCAL_DIR=ReactReader
 WEBDIR=/home2/dbthunde/public_html/src/dist/shape
 WEBUSER=dbthunde
 WEBHOST=dbthunder.com

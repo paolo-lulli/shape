@@ -47,31 +47,45 @@ public function getUserIdByToken($token){
 	$user_id = "0";
 	$db = DBManager::getInstance();
 
-	$query = sprintf("select ID from User where token ='%s'", $token);
-//echo $query;
+	$query = sprintf("select u.ID from User u, Account a  where u.ID = a.ID_User and a.active='1'  and a.token ='%s'", $token);
 
 // Perform Query
 	$results = $db->query($query);
 	$log_manager->query($query, "login()");
-////////////////////////////$row = $results->fetchArray();
 	$row = $results->fetch(PDO::FETCH_ASSOC); 
-
 	if (  strcmp($row["ID"], "0") ){
 		$user_id = $row["ID"];
 	}
 return $user_id;
 }
 
-public function getToken($login, $pass_hash){
+public function getRoleIdByToken($token){
 	$log_manager = new LogManager;
 	//$log_manager->debug("aaaaaaaaaaaaa", "login()");
+	$role_id = "0";
+	$db = DBManager::getInstance();
+
+	$query = sprintf("select r.ID from Role r, Account a  where r.ID = a.ID_Role and a.active='1'  and a.token ='%s'", $token);
+
+// Perform Query
+	$results = $db->query($query);
+	$log_manager->query($query, "login()");
+	$row = $results->fetch(PDO::FETCH_ASSOC); 
+	if (  strcmp($row["ID"], "0") ){
+		$role_id = $row["ID"];
+	}
+return $role_id;
+}
+
+public function getToken($login, $pass_hash){
+	$log_manager = new LogManager;
 	$user_id = "0";
 // $pass_hash = sha1($password)
 	 $db = DBManager::getInstance();
 
-	$query = sprintf("select token from User
-where nickname ='%s' 
-and password ='%s'",
+	$query = sprintf("select token from User u, Account a  where u.id = a.ID_User and a.active='1'
+where u.nickname ='%s' 
+and u.password ='%s'",
     $login,
     $pass_hash);
 //echo $query;
@@ -86,6 +100,14 @@ and password ='%s'",
 		$token = $row["token"];
 	}
 return $token;
+}
+
+function authResourceByToken($token, $resource_id){
+        $am = new AuthManager();
+        $user_id = $am->getUserIdByToken($token);
+        $role_id = $am->getRoleIdByToken($token);
+        $result =  $am->authResource($user_id, $role_id, $resource_id);
+        return $result;
 }
 
 
