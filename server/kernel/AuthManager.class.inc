@@ -17,62 +17,63 @@ ID_User login(username, password)
 
 public function login($login, $pass_hash){
 	$log_manager = new LogManager;
-	//$log_manager->debug("aaaaaaaaaaaaa", "login()");
 	$user_id = "0";
 // $pass_hash = sha1($password)
 	 $db = DBManager::getInstance();
+	$userTable =DBMANAGER::$tablesPrefix."User";
 
-	$query = sprintf("select ID from User
+	$query = sprintf("select ID as uid from $userTable 
 where nickname ='%s' 
 and password ='%s'",
     $login,
     $pass_hash);
-//echo $query;
 
 // Perform Query
 	$results = $db->query($query);
 	$log_manager->query($query, "login()");
-////////////////////////////$row = $results->fetchArray();
 	$row = $results->fetch(PDO::FETCH_ASSOC); 
 
-	if (  strcmp($row["ID"], "0") ){
-		$user_id = $row["ID"];
+	if (  strcmp($row["uid"], "0") ){
+		$user_id = $row["uid"];
 	}
 return $user_id;
 }
 
 public function getUserIdByToken($token){
 	$log_manager = new LogManager;
-	//$log_manager->debug("aaaaaaaaaaaaa", "login()");
 	$user_id = "0";
 	$db = DBManager::getInstance();
-
-	$query = sprintf("select u.ID from User u, Account a  where u.ID = a.ID_User and a.active='1'  and a.token ='%s'", $token);
+	$userTable =DBMANAGER::$tablesPrefix."User";
+	$roleTable =DBMANAGER::$tablesPrefix."Role";
+	$accountTable =DBMANAGER::$tablesPrefix."Account";
+	$query = sprintf("select u.ID as uid from $userTable u, $accountTable a  where u.ID = a.ID_User and a.active='1'  and a.token ='%s'", $token);
 
 // Perform Query
 	$results = $db->query($query);
 	$log_manager->query($query, "login()");
 	$row = $results->fetch(PDO::FETCH_ASSOC); 
-	if (  strcmp($row["ID"], "0") ){
-		$user_id = $row["ID"];
+	if (  strcmp($row["uid"], "0") ){
+		$user_id = $row["uid"];
 	}
 return $user_id;
 }
 
 public function getRoleIdByToken($token){
 	$log_manager = new LogManager;
-	//$log_manager->debug("aaaaaaaaaaaaa", "login()");
+	$userTable =DBMANAGER::$tablesPrefix."User";
+	$roleTable =DBMANAGER::$tablesPrefix."Role";
+	$accountTable =DBMANAGER::$tablesPrefix."Account";
 	$role_id = "0";
 	$db = DBManager::getInstance();
 
-	$query = sprintf("select r.ID from Role r, Account a  where r.ID = a.ID_Role and a.active='1'  and a.token ='%s'", $token);
+	$query = sprintf("select r.ID as id from $roleTable r, $accountTable a  where r.ID = a.ID_Role and a.active='1'  and a.token ='%s'", $token);
 
 // Perform Query
 	$results = $db->query($query);
 	$log_manager->query($query, "login()");
 	$row = $results->fetch(PDO::FETCH_ASSOC); 
-	if (  strcmp($row["ID"], "0") ){
-		$role_id = $row["ID"];
+	if (  strcmp($row["id"], "0") ){
+		$role_id = $row["id"];
 	}
 return $role_id;
 }
@@ -82,8 +83,9 @@ public function getToken($login, $pass_hash){
 	$user_id = "0";
 // $pass_hash = sha1($password)
 	 $db = DBManager::getInstance();
-
-	$query = sprintf("select token from User u, Account a  where u.id = a.ID_User and a.active='1'
+	$userTable =DBMANAGER::$tablesPrefix."User";
+        $accountTable =DBMANAGER::$tablesPrefix."Account";
+	$query = sprintf("select token from $userTable u, $accountTable a  where u.id = a.ID_User and a.active='1'
 where u.nickname ='%s' 
 and u.password ='%s'",
     $login,
@@ -93,7 +95,6 @@ and u.password ='%s'",
 // Perform Query
 	$results = $db->query($query);
 	$log_manager->query($query, "getToken()");
-////////////////////////////$row = $results->fetchArray();
 	$row = $results->fetch(PDO::FETCH_ASSOC); 
 
 	if (  strcmp($row["token"], "0") ){
@@ -106,7 +107,7 @@ function authResourceByToken($token, $resource_id){
         $am = new AuthManager();
         $user_id = $am->getUserIdByToken($token);
         $role_id = $am->getRoleIdByToken($token);
-        $result =  $am->authResource($user_id, $role_id, $resource_id);
+        $result = $am->authResource($user_id, $role_id, $resource_id);
         return $result;
 }
 
@@ -123,18 +124,34 @@ $resource_id =$_REQUEST['RESOURCE'];
 $db = DBManager::getInstance();
 //$db = new SQLite3(DB_FILE);
 
-$query = sprintf("select count(*) as authorized from Account a
-join User u on u.ID = a.ID_User
-join Usergroup g on g.ID = a.ID_Usergroup
-join Role r on  r.ID = a.ID_Role
-join Policy p on p.ID_Role = r.ID
+$userTable =DBMANAGER::$tablesPrefix."User";
+$roleTable =DBMANAGER::$tablesPrefix."Role";
+$accountTable =DBMANAGER::$tablesPrefix."Account";
+$usergroupTable =DBMANAGER::$tablesPrefix."Usergroup";
+$policyTable =DBMANAGER::$tablesPrefix."Policy";
+
+/*
+$sql ="select count(*) as authorized from $accountTable a
+join $userTable u on u.ID = a.ID_User
+join $roleTable r on  r.ID = a.ID_Role
+join $usergroupTable g on g.ID = a.ID_Usergroup
+join $policyTable p on p.ID_Role = r.ID
+where u.ID = '$user_id'
+and   r.ID = '$role_id'
+and   p.ID_Resource = '$resource_id'";
+*/
+$query = sprintf("select count(*) as authorized from $accountTable a
+join $userTable u on u.ID = a.ID_User
+join $roleTable r on  r.ID = a.ID_Role
+join $usergroupTable g on g.ID = a.ID_Usergroup
+join $policyTable p on p.ID_Role = r.ID
 where u.ID = '%s'
 and   r.ID = '%s'
 and   p.ID_Resource = '%s'",
     $user_id,
     $role_id,
     $resource_id);
-//echo $query;
+//echo "SQL:[".$sql."]";
 
 // Perform Query
 $results = $db->query($query);

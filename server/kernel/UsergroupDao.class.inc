@@ -38,10 +38,15 @@ public function getRoles($login_id){
 $log_manager = new LogManager;
 $db = DBManager::getInstance();
 
-$query = sprintf("select r.name as ROLE from   Account a 
-join User u on u.ID = a.ID_User
-join Usergroup g on g.ID = a.ID_Usergroup
-join Role r on  r.ID = a.ID_Role
+$userTable =DBMANAGER::$tablesPrefix."User";
+$roleTable =DBMANAGER::$tablesPrefix."Role";
+$accountTable =DBMANAGER::$tablesPrefix."Account";
+$usergroupTable =DBMANAGER::$tablesPrefix."Usergroup";
+
+$query = sprintf("select r.name as role from   $accountTable a 
+join $userTable u on u.ID = a.ID_User
+join $usergroupTable g on g.ID = a.ID_Usergroup
+join $roleTable r on  r.ID = a.ID_Role
 where u.ID ='%s'",
     mysql_real_escape_string($login_id));
 // Perform Query
@@ -51,8 +56,8 @@ $log_manager->query($query, "getRoles()");
 $row = $results->fetch(PDO::FETCH_ASSOC);
 $count=0;
 $roles = array();
-if (  strcmp($row["ROLE"], "0") ){
-	$role_id = $row["ROLE"];
+if (  strcmp($row["role"], "0") ){
+	$role_id = $row["role"];
 	$roles [$count] = "$role_id";
 	$count++;	
 }
@@ -65,10 +70,15 @@ public function getGroups($login_id){
 $log_manager = new LogManager;
 $db = DBManager::getInstance();
 
-$query = sprintf("select g.name as USERGROUP from   Account a 
-join User u on u.ID = a.ID_User
-join Usergroup g on g.ID = a.ID_Usergroup
-join Role r on  r.ID = a.ID_Role
+$userTable =DBMANAGER::$tablesPrefix."User";
+$roleTable =DBMANAGER::$tablesPrefix."Role";
+$accountTable =DBMANAGER::$tablesPrefix."Account";
+$usergroupTable =DBMANAGER::$tablesPrefix."Usergroup";
+
+$query = sprintf("select g.name as usergroup from   $accountTable a 
+join $userTable u on u.ID = a.ID_User
+join $usergroupTable g on g.ID = a.ID_Usergroup
+join $roleTable r on  r.ID = a.ID_Role
 where u.ID ='%s'",
     mysql_real_escape_string($login_id));
 // Perform Query
@@ -78,8 +88,8 @@ $log_manager->query($query, "getGroups()");
 $row = $results->fetch(PDO::FETCH_ASSOC);
 $count=0;
 $roles = array();
-if (  strcmp($row["USERGROUP"], "0") ){
-	$role_id = $row["USERGROUP"];
+if (  strcmp($row["usergroup"], "0") ){
+	$role_id = $row["usergroup"];
 	$groups [$count] = "$role_id";
 	$count++;	
 }
@@ -91,14 +101,16 @@ public function getGroupId($groupname){
 $log_manager = new LogManager;
 $db = DBManager::getInstance();
 
-$query = sprintf("select g.ID as ID from Usergroup g where g.name ='%s'", $groupname);
+$usergroupTable =DBMANAGER::$tablesPrefix."Usergroup";
+$query = sprintf("select g.ID as id from $usergroupTable g where g.name ='%s'", $groupname);
 // Perform Query
 $results = $db->query($query);
 $log_manager->query($query, "getGroupId()");
 $row = $results->fetch(PDO::FETCH_ASSOC);
 $count=0;
-if (  strcmp($row["ID"], "0") ){
-        $group_id = $row["ID"];
+var_dump($row);
+if (  strcmp($row["id"], "0") ){
+        $group_id = $row["id"];
         $count++;
 }
 return $group_id;

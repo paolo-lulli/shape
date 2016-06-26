@@ -16,7 +16,17 @@ function init($user_id) {
 		Availables user and groups for the actual user
 	*/
 	$registry[$user_id]['roles']  = $userdao->getRoles($user_id);
+	/*
+	print "------------------------------------------------<br/>";
+	print "ROLES-:".var_dump($registry[$user_id]['roles']) ;
+	print "------------------------------------------------<br/>";
+	*/
 	$registry[$user_id]['groups'] = $userdao->getGroups($user_id);
+	/*
+	print "------------------------------------------------<br/>";
+	print "ROLES-:".var_dump($registry[$user_id]['groups']) ;
+	print "------------------------------------------------<br/>";
+	*/
 	/*
 	 Role in use for the actual user
 	*/

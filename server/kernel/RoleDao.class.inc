@@ -32,21 +32,25 @@ $log_manager = new LogManager();
 $db = DBManager::getInstance();
 $db = $this->getConnection();
 
-$query = sprintf("select r.name as ROLE from   Account a 
-join User u on u.ID = a.ID_User
-join Usergroup g on g.ID = a.ID_Usergroup
-join Role r on  r.ID = a.ID_Role
+$userTable =DBMANAGER::$tablesPrefix."User";
+$roleTable =DBMANAGER::$tablesPrefix."Role";
+$accountTable =DBMANAGER::$tablesPrefix."Account";
+$usergroupTable =DBMANAGER::$tablesPrefix."Usergroup";
+
+$query = sprintf("select r.name as role from  $accountTable a 
+join $userTable u on u.ID = a.ID_User
+join $usergroupTable g on g.ID = a.ID_Usergroup
+join $roleTable r on  r.ID = a.ID_Role
 where u.ID ='%s'",
     mysql_real_escape_string($login_id));
 // Perform Query
 $results = $db->query($query);
 $log_manager->query($query, "getRoles()");
-//$row = $results->fetchArray();
 $row = $results->fetch(PDO::FETCH_ASSOC);
 $count=0;
 $roles = array();
-if (  strcmp($row["ROLE"], "0") ){
-	$role_id = $row["ROLE"];
+if (  strcmp($row["role"], "0") ){
+	$role_id = $row["role"];
 	$roles [$count] = "$role_id";
 	$count++;	
 }
@@ -62,21 +66,23 @@ $log_manager = new LogManager();
 $db = DBManager::getInstance();
 $db = $this->getConnection();
 
-$query = sprintf("select ID from Role where name ='%s'", $role_name);
+$roleTable =DBMANAGER::$tablesPrefix."Role";
+$query = sprintf("select ID as rid from $roleTable where name ='%s'", $role_name);
 // Perform Query
 $results = $db->query($query);
 $log_manager->query($query, "getRoles()");
 //$row = $results->fetchArray();
 $row = $results->fetch(PDO::FETCH_ASSOC);
 $count=0;
-if (  strcmp($row["ID"], "0") ){
-	$role_id = $row["ID"];
+if (  strcmp($row["rid"], "0") ){
+	$role_id = $row["rid"];
 }
 return $role_id;
 }
 
 public function createRole($name, $description){
-     $table = "Role";
+	$roleTable =DBMANAGER::$tablesPrefix."Role";
+     	$table = $roleTable;
         $actual_date = date("Y-m-d H:i:s");
         $guidGenerator = new GuidGenerator;
         $ID = $guidGenerator->generate();
@@ -95,16 +101,18 @@ return $ID;
 public function deleteRole($role_id){
  $db = DBManager::getInstance();
         $logManager = new LogManager;
-        $query = 'DELETE from Role where ID =\''. $role_id .'\'';
+	$roleTable =DBMANAGER::$tablesPrefix."Role";
+        $query = "DELETE from $roleTable where ID =\'". $role_id .'\'';
         $logManager->query($query, "delete() Role");
         $results = $db->exec($query);
         return $results; //is an int
 }
 
 public function deleteRoleByName($role_name){
- $db = DBManager::getInstance();
+ 	$db = DBManager::getInstance();
         $logManager = new LogManager;
-        $query = 'DELETE from Role where name =\''. $role_name .'\'';
+	$roleTable =DBMANAGER::$tablesPrefix."Role";
+        $query = "DELETE from $roleTable where name =\'". $role_name .'\'';
         $logManager->query($query, "delete() Role");
         $results = $db->exec($query);
         return $results; //is an int

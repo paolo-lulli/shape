@@ -35,7 +35,8 @@ class ResourceManager
     require_once($resource_class);
 
     $db = DBManager::getInstance();
-    $query = sprintf("insert into Resource (ID, name, data, 
+	$resourceTable =DBMANAGER::$tablesPrefix."Resource";
+    $query = sprintf("insert into $resourceTable (ID, name, data, 
     	description, created, externaltable, 
     	type, updated, internal) values('%s','%s','%s','%s','%s','%s','%s','%s','%s' )", 
         $res_name,

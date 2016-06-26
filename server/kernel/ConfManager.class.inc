@@ -20,7 +20,12 @@ class ConfManager extends ConfigurationInterface
 	Returns the ID of the registered User
 */
 public function registerUser( $name, $surname, $nickname, $password, $openid ){
-	$table = "User";
+$userTable =DBMANAGER::$tablesPrefix."User";
+$roleTable =DBMANAGER::$tablesPrefix."Role";
+$accountTable =DBMANAGER::$tablesPrefix."Account";
+$usergroupTable =DBMANAGER::$tablesPrefix."Usergroup";
+
+	$table = $userTable;
  	$actual_date = date("Y-m-d H:i:s");
  	$guidGenerator = new GuidGenerator;
     $ID = $guidGenerator->generate();
@@ -36,7 +41,12 @@ public function registerUser( $name, $surname, $nickname, $password, $openid ){
 }
 
 public function generateToken( $ID_User ){
-	$table = "User";
+$userTable =DBMANAGER::$tablesPrefix."User";
+$roleTable =DBMANAGER::$tablesPrefix."Role";
+$accountTable =DBMANAGER::$tablesPrefix."Account";
+$usergroupTable =DBMANAGER::$tablesPrefix."Usergroup";
+	//$table = "User";
+	$table = $userTable;
  	$actual_date = date("Y-m-d H:i:s");
  	$guidGenerator = new GuidGenerator;
     $token = $guidGenerator->generate();
@@ -62,10 +72,13 @@ An account is created for the existing user in User
 public function createAccount($userid, $group_name, $role_name){
 	$ugdao = new UsergroupDao;
 	$groupid = $ugdao->getGroupId($group_name);
+	print "\ngroupid=".$groupid;
 	$roledao = new RoleDao;
 	$roleid = $roledao->getRoleId($role_name);
+	print "\nroleid=".$roleid;
 	$accdao = new AccountDao;
 	$idAccount = $accdao->insertAccount($userid, $roleid, $groupid);
+	print "\nidAccount=".$idAccount;
 	return $idAccount; 
 }
 
@@ -75,7 +88,8 @@ public function createAccount($userid, $group_name, $role_name){
 public function activateAccount($account_id){
         $db = DBManager::getInstance();
         $logManager = new LogManager;
-	$query = 'UPDATE Account set active = 1 where ID =\''. $account_id .'\'';
+	$accountTable =DBMANAGER::$tablesPrefix."Account";
+	$query = "UPDATE $accountTable set active = 1 where ID ='". $account_id .'\'';
         $logManager->query($query, "update() Account");
         $results = $db->exec($query);
         return $results; //is an int
@@ -84,7 +98,8 @@ public function activateAccount($account_id){
 public function deactivateAccount($account_id){
         $db = DBManager::getInstance();
         $logManager = new LogManager;
-	$query = 'UPDATE Account set active = 0 where ID =\''. $account_id .'\'';
+	$accountTable =DBMANAGER::$tablesPrefix."Account";
+	$query = "UPDATE $accountTable set active = 0 where ID ='". $account_id .'\'';
         $logManager->query($query, "update() Account");
         $results = $db->exec($query);
         return $results; //is an int
@@ -112,9 +127,10 @@ public function installResource($resName){
 }
 
 public function deleteResource($resName){
+	$resourceTable =DBMANAGER::$tablesPrefix."Resource";
        $db = DBManager::getInstance();
         $logManager = new LogManager;
-        $query = 'DELETE FROM Resource where name =\''. $resName .'\' ';
+        $query = "DELETE FROM $resourceTable where name =\'". $resName .'\' ';
         $logManager->query($query, "delete() Policy");
         $results = $db->exec($query);
         return $results; //is an int
@@ -129,16 +145,20 @@ public function addResourceToRole($resName, $roleName){
 public function removeResourceFromRole($resName, $roleName){
    	$db = DBManager::getInstance();
         $logManager = new LogManager;
+	$policyTable =DBMANAGER::$tablesPrefix."Policy";
+	$roleTable =DBMANAGER::$tablesPrefix."Role";
         //VERSION with ID_Resource different from name...
 	//$query = 'DELETE FROM Policy where ID_Role = (select ID from Role where name =\''. $roleName .'\') and ID_Resource = (select ID from Resource where name =\''. $resName  .'\')';
-        $query = 'DELETE FROM Policy where ID_Role = (select ID from Role where name =\''. $roleName .'\') and ID_Resource = \''. $resName  .'\' ';
+        $query = "DELETE FROM $policyTable  where ID_Role = (select ID from $roleTable  where name =\'". $roleName .'\') and ID_Resource = \''. $resName  .'\' ';
         $logManager->query($query, "delete() Policy");
         $results = $db->exec($query);
         return $results; //is an int
 }
 //OK
 public function createResource( $name, $description ){
-        $table = "Resource";
+
+	$resourceTable =DBMANAGER::$tablesPrefix."Resource";
+        $table = $resourceTable;
         $actual_date = date("Y-m-d H:i:s");
         $guidGenerator = new GuidGenerator;
         $ID = $guidGenerator->generate();

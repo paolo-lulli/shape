@@ -16,7 +16,8 @@ $user_id = "0";
 
 $db = DBManager::getInstance();
 
-$query = sprintf("select nickname from User where ID ='%s'" , 
+$userTable =DBMANAGER::$tablesPrefix."User"; 
+$query = sprintf("select nickname from ".$userTable." where ID ='%s'" , 
     $login_id);
 //echo $query;
 
@@ -37,10 +38,15 @@ public function getRoles($login_id){
 $log_manager = new LogManager;
 $db = DBManager::getInstance();
 
-$query = sprintf("select r.name as ROLE from   Account a 
-join User u on u.ID = a.ID_User
-join Usergroup g on g.ID = a.ID_Usergroup
-join Role r on  r.ID = a.ID_Role
+$userTable =DBMANAGER::$tablesPrefix."User";
+$roleTable =DBMANAGER::$tablesPrefix."Role";
+$accountTable =DBMANAGER::$tablesPrefix."Account";
+$usergroupTable =DBMANAGER::$tablesPrefix."Usergroup";
+
+$query = sprintf("select r.name as role from   $accountTable a 
+join $userTable u on u.ID = a.ID_User
+join $usergroupTable g on g.ID = a.ID_Usergroup
+join $roleTable r on  r.ID = a.ID_Role
 where u.ID ='%s'",
     $login_id);
 // Perform Query
@@ -53,7 +59,7 @@ $roles = array();
 //if (  strcmp($row["ROLE"], "0") ){
 //while($row = $results->fetchArray()){
 while($row = $results->fetch(PDO::FETCH_ASSOC)){
-	$role_id = $row["ROLE"];
+	$role_id = $row["role"];
 	//$roles [$count] = "$role_id";
 	$roles [] = "$role_id";
 	$count++;	
@@ -69,10 +75,15 @@ $groups=array();
 $log_manager = new LogManager;
 $db = DBManager::getInstance();
 
-$query = sprintf("select g.name as USERGROUP from   Account a 
-join User u on u.ID = a.ID_User
-join Usergroup g on g.ID = a.ID_Usergroup
-join Role r on  r.ID = a.ID_Role
+$userTable =DBMANAGER::$tablesPrefix."User";
+$roleTable =DBMANAGER::$tablesPrefix."Role";
+$accountTable =DBMANAGER::$tablesPrefix."Account";
+$usergroupTable =DBMANAGER::$tablesPrefix."Usergroup";
+
+$query = sprintf("select g.name as usergroup from   $accountTable a 
+join $userTable u on u.ID = a.ID_User
+join $usergroupTable g on g.ID = a.ID_Usergroup
+join $roleTable r on  r.ID = a.ID_Role
 where u.ID ='%s'",
     $login_id);
 // Perform Query
@@ -83,7 +94,7 @@ $count=0;
 $roles = array();
 while($row = $results->fetch(PDO::FETCH_ASSOC)){
 //if (  strcmp($row["USERGROUP"], "0") ){
-	$role_id = $row["USERGROUP"];
+	$role_id = $row["usergroup"];
 	$groups [$count] = "$role_id";
 	$count++;	
 //}

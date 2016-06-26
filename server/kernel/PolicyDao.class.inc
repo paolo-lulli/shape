@@ -12,7 +12,7 @@ require_once(BACKEND_DIR."/kernel/QueryManager.class.inc");
 
 class PolicyDao extends GenericDao
 {
-var $tableName ="Policy";
+//var $tableName ="shp_Policy";
 
 
 public function getObjectById($id){
@@ -23,7 +23,12 @@ public function insertPolicy($id_resource, $id_role, $perms, $description){
 }
 
 public function assignResourceToIdRole($resource_name, $id_role, $description){
-        $table = "Policy";
+	$userTable =DBMANAGER::$tablesPrefix."User";
+	$roleTable =DBMANAGER::$tablesPrefix."Role";
+	$accountTable =DBMANAGER::$tablesPrefix."Account";
+	$usergroupTable =DBMANAGER::$tablesPrefix."Usergroup";
+	$policyTable =DBMANAGER::$tablesPrefix."Policy";
+        $table = $policyTable;
         $qm = new QueryManager;
         $resManager = new ResourceManager;
         $guidGenerator = new GuidGenerator;
