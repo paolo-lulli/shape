@@ -1,0 +1,26 @@
+body {
+	 /*
+background-image: url("/autoservice/static/images/ios-linen.jpg");
+	color: black;
+	*/
+	/*
+	 background-image: url("/autoservice/static/images/zebratura.jpg");
+	color: green;
+*/
+/*
+	 background-image: url("/autoservice/static/images/blue.jpg");
+	color: black;
+*/
+	 background-image: url("/autoservice/static/images/clio-williams-99324.jpg");
+	color: black;
+/*
+	 background-image: url("/autoservice/static/images/williams.jpg");
+	color: black;
+*/
+	font-family: 'Courier';
+}
+
+table {
+    background-color: white;
+	border-radius: 12px 12px 12px 12px;
+}
