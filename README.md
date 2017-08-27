@@ -2,7 +2,7 @@ Shape Framework
 ==================
 
 Version 12 December 2010  - by Paolo Lulli
-<http://paolo.lulli.net/>
+<http://lulli.net/>
 
 Introduction
 ------------
@@ -12,7 +12,7 @@ This is only a short introduction to the Shape Framework.
 Shape Framework features:
 
 - Service Oriented Architecture
-- 3-Tier PHP architecture
+- 3-Tier architecture
 - MVC engine
 - Flexible RBAC Authentication 
 - Portable Database Query Engine
